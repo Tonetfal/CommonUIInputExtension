@@ -1,3 +1,5 @@
+// Author: Antonio Sidenko (Tonetfal), April 2024
+
 #pragma once
 
 #include "InputAction.h"
@@ -51,9 +53,6 @@ public:
 	FInputActionExecutedSignature Callback;
 };
 
-/**
- *
- */
 UCLASS()
 class UCommonUIInputExtensionLibrary
 	: public UBlueprintFunctionLibrary
@@ -61,11 +60,11 @@ class UCommonUIInputExtensionLibrary
 	GENERATED_BODY()
 
 public:
-	UFUNCTION(BlueprintCallable, meta=(DefaultToSelf, Keywords="input action"))
+	UFUNCTION(BlueprintCallable, meta=(DefaultToSelf="Target", Keywords="input action"))
 	static FCUIE_InputActionBindingHandle RegisterBinding_CommonUI(UCommonUserWidget* Target,
 		FDataTableRowHandle InputAction, const FCUIE_BindUIActionArgs& Arguments);
 
-	UFUNCTION(BlueprintCallable, meta=(DefaultToSelf, Keywords="input action"))
+	UFUNCTION(BlueprintCallable, meta=(DefaultToSelf="Target", Keywords="input action"))
 	static FCUIE_InputActionBindingHandle RegisterBinding_EnhancedInput(UCommonUserWidget* Target,
 		const UInputAction* InputAction, const FCUIE_BindUIActionArgs& Arguments);
 

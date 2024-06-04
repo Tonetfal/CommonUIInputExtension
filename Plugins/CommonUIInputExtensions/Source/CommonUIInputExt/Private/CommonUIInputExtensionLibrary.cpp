@@ -1,7 +1,8 @@
-//
+// Author: Antonio Sidenko (Tonetfal), April 2024
 
 #include "CommonUIInputExtensionLibrary.h"
 
+#include "CommonUITypes.h"
 #include "CommonUserWidget.h"
 #include "Input/CommonUIActionRouterBase.h"
 #include "Input/CommonUIInputTypes.h"
@@ -43,7 +44,19 @@ FCUIE_InputActionBindingHandle UCommonUIInputExtensionLibrary::RegisterBinding_C
 FCUIE_InputActionBindingHandle UCommonUIInputExtensionLibrary::RegisterBinding_EnhancedInput(
 	UCommonUserWidget* Target, const UInputAction* InputAction, const FCUIE_BindUIActionArgs& Arguments)
 {
-	return CommonUIInputExtension_RegisterBinding(Target, InputAction, Arguments);
+	FCUIE_InputActionBindingHandle ReturnValue;
+	if (ensureMsgf(CommonUI::IsEnhancedInputSupportEnabled(),
+		TEXT("Impossible to bind an Enhanced Input Input Action [%s] with widget [%s] ")
+		TEXT("if Common UI Enhanced Input support is not enabled."), *GetNameSafe(InputAction), *GetNameSafe(Target)))
+	{
+		if (ensureMsgf(IsValid(InputAction), TEXT("Impossible to bind an invalid Input Action to widget [%s]"),
+			*GetNameSafe(Target)))
+		{
+			ReturnValue = CommonUIInputExtension_RegisterBinding(Target, InputAction, Arguments);
+		}
+	}
+
+	return ReturnValue;
 }
 
 void UCommonUIInputExtensionLibrary::UnregisterBinding(FCUIE_InputActionBindingHandle BindingHandle)

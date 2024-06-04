@@ -1,4 +1,6 @@
-﻿using UnrealBuildTool;
+﻿// Author: Antonio Sidenko (Tonetfal), April 2024
+
+using UnrealBuildTool;
 
 public class CommonUIInputExt : ModuleRules
 {
