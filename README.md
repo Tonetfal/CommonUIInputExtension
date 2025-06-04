@@ -1,13 +1,11 @@
 ﻿# Common UI Input Extensions
 
-This plugin exposes some common UI input related functions to blueprints allowing to easily bind either common UI 
+This plugin exposes some common UI input related functions to blueprints allowing to easily bind either common UI
 input actions or Enhanced Input Input Actions to common user widgets.
 
 ## Installation
 
-Download the release that you wish to use from the
-[Release](https://github.com/Tonetfal/CommonUIInputExtension/releases) page, and copy its Plugins directory
-into your project's root.
+Clone the repository in your project's Plugin directory.
 
 ## Usage
 
@@ -21,7 +19,7 @@ Enhanced Input counterpart:
 
 If you want to have the original input action event, you need to mark it as not generic.
 
-Generic actions will fire only one delegate at a time, whereas non-generic actions fire any amount of IA events you 
+Generic actions will fire only one delegate at a time, whereas non-generic actions fire any amount of IA events you
 have active and reachable.
 
 <img src="Docs/cuiiext_generic_actions_01.png" alt="Docs/cuiiext_generic_actions_01.png">
@@ -45,6 +43,6 @@ have active and reachable.
 ## Notes for Enhanced Input version
 
 - [Common UI and Enhanced Input documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/using-commonui-with-enhnaced-input-in-unreal-engine)
-- Make sure to bind IMC containing your input actions to get them firing. You can either do it manually or through 
+- Make sure to bind IMC containing your input actions to get them firing. You can either do it manually or through
   common activatable widget's details panel; ensure that you have enhanced input support enabled to see the property.
 - Don't specify same IMC for both UI and game as the activatable widget will unregister it once deactivated.
