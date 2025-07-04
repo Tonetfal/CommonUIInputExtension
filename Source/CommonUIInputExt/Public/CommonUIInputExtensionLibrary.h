@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "CommonInputModeTypes.h"
 #include "InputAction.h"
 #include "Input/UIActionBindingHandle.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
@@ -48,6 +49,9 @@ public:
 	/** Whether this binding can/should be displayed in a CommonActionBar (if one exists) */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool bDisplayInActionBar = true;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	ECommonInputMode InputMode = ECommonInputMode::Menu;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FInputActionExecutedSignature Callback;

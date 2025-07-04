@@ -26,6 +26,7 @@ static FCUIE_InputActionBindingHandle CommonUIInputExtension_RegisterBinding(
 	BindArgs.bConsumeInput = Arguments.bConsumeInput;
 	BindArgs.bIsPersistent = Arguments.bIsPersistent;
 	BindArgs.bDisplayInActionBar = Arguments.bDisplayInActionBar;
+	BindArgs.InputMode = Arguments.InputMode;
 
 	if (auto* ActionRouter = UCommonUIActionRouterBase::Get(*Target); IsValid(ActionRouter))
 	{

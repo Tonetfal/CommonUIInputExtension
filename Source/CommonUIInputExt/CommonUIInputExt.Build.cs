@@ -11,8 +11,9 @@ public class CommonUIInputExt : ModuleRules
         PublicDependencyModuleNames.AddRange(
             new string[]
             {
-                "Core",
+                "CommonInput",
                 "CommonUI",
+                "Core",
                 "EnhancedInput",
             }
         );
